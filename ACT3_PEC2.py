@@ -1,12 +1,16 @@
 
 # ACT3 PEC2
-# Visualización alternativa OHLC
-# Fuente: Dataset 3.csv
+# Visualización OHLC
+!pip install mplfinance
 
 import pandas as pd
-import matplotlib.pyplot as plt
+import mplfinance as mpf
+from google.colab import files
+import io
 
-df = pd.read_csv("Dataset 3.csv", sep=";")
+
+df = pd.read_csv('Dataset 3.csv', sep=";")
+
 df.columns = df.columns.str.replace('"', '').str.strip()
 
 df["Date"] = pd.to_datetime(df["Date"], format="%m/%d/%Y")
@@ -18,17 +22,12 @@ for col in ["Open", "High", "Low", "Price"]:
 
 df.rename(columns={"Price": "Close"}, inplace=True)
 
-plt.figure(figsize=(14, 7))
-plt.plot(df["Date"], df["Open"], label="Open", color="blue")
-plt.plot(df["Date"], df["High"], label="High", color="green")
-plt.plot(df["Date"], df["Low"], label="Low", color="red")
-plt.plot(df["Date"], df["Close"], label="Close", color="orange")
+df.set_index("Date", inplace=True)
 
-plt.title("ACT3 PEC2 - Evolución OHLC (Gráfico de Líneas)")
-plt.xlabel("Fecha")
-plt.ylabel("Precio (€)")
-plt.legend()
-plt.grid(True)
-plt.tight_layout()
+df_ohlc = df[["Open", "High", "Low", "Close"]]
 
-plt.savefig("OHLC.png")
+mpf.plot(df_ohlc, type='ohlc', style='charles',
+         title='ACT3 PEC2 - OHLC Chart',
+         ylabel='Precio (€)', volume=False,
+         figratio=(14, 7), figscale=1.2)
+
