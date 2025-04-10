@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>PEC2 - Análisis Extendido</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f4; color: #333; }
+        h1 { color: #005b96; }
+        h2, h3 { color: #003366; }
+        ul { padding-left: 20px; }
+        .container { background: white; padding: 30px; margin-bottom: 50px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        img { max-width: 100%; margin-top: 20px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>ACT1 PEC2 – Gráfico de Área</h1>
+
+    <h3>Definición y funcionamiento del gráfico</h3>
+    <p>
+        El gráfico de área es una técnica de visualización estadística basada en el gráfico de líneas. Se utiliza para representar la evolución de datos cuantitativos a lo largo del tiempo. 
+        La diferencia principal radica en que el área entre la línea y el eje horizontal se rellena con color, lo cual ayuda a destacar el volumen y la relación entre distintas series.
+    </p>
+    <p>
+        Su origen se encuentra en los estudios económicos y demográficos del siglo XX. Es comúnmente aplicado en informes financieros, análisis de tendencias de mercado, evolución demográfica,
+        energía, clima, tráfico web y muchas otras disciplinas.
+    </p>
+
+    <h3>Análisis del dataset</h3>
+    <ul>
+        <li>Fuente: <a href="https://www.epdata.es/datos/balanza-comercial-espana-importaciones-exportaciones-datos-estadisticas/308#eeuu" target="_blank">Epdata</a></li>
+        <li>Tipo: Series temporales cuantitativas.</li>
+        <li>Variables: Año, país (China/EE.UU.), exportaciones, importaciones.</li>
+        <li>Estructura: Dataset limpio con datos por país y año (formato largo).</li>
+        <li>Limitaciones: La comparación entre múltiples países es efectiva visualmente hasta cierto límite (demasiadas series saturan la gráfica).</li>
+    </ul>
+
+    <h3>Visualización realizada</h3>
+    <p>
+        Se representó la evolución de las exportaciones e importaciones de España con China y Estados Unidos desde 1995 hasta 2023.
+        Se utilizaron colores degradados emparejados para reflejar la vinculación entre exportación e importación de cada país.
+    </p>
+
+    <h3>Objetivo y análisis</h3>
+    <p>
+        Esta visualización permite comparar cómo ha evolucionado el comercio exterior bilateral a lo largo del tiempo. El uso del área y color 
+        facilita la percepción del crecimiento, estancamiento o cambios abruptos. Destaca el crecimiento progresivo con China y la irregularidad con EE.UU.
+        Esta técnica es útil para comunicar tanto magnitudes absolutas como tendencias comparadas.
+    </p>
+
+    <img src="exportaciones_importaciones_area.png" alt="Gráfico de área de exportaciones e importaciones">
+</div>
+
+<div class="container">
+    <h1>ACT2 PEC2 – Matriz de Correlación</h1>
+
+    <h3>Definición y funcionamiento del gráfico</h3>
+    <p>
+        Una matriz de correlación es una representación cuadrada que muestra la relación lineal entre pares de variables numéricas.
+        Se acompaña frecuentemente de un mapa de calor (<em>heatmap</em>) para una interpretación visual rápida. Los valores van de -1 (correlación negativa perfecta)
+        a +1 (positiva perfecta), siendo 0 la ausencia de correlación. 
+    </p>
+    <p>
+        Esta técnica se usa ampliamente en análisis exploratorio de datos (EDA), estadística y machine learning como paso previo a la selección de variables o detección de colinealidades.
+    </p>
+
+    <h3>Análisis del dataset</h3>
+    <ul>
+        <li>Fuente: <a href="https://archive.ics.uci.edu/dataset/445/absenteeism+at+work" target="_blank">UCI Machine Learning Repository</a></li>
+        <li>Tipo: Cuantitativo, multivariable.</li>
+        <li>Variables: Edad, peso, distancia al trabajo, IMC, número de hijos, carga laboral, etc.</li>
+        <li>Observaciones: 740 registros de empleados.</li>
+        <li>Limitaciones: No se incluyen variables emocionales o cualitativas que podrían incidir en el ausentismo.</li>
+    </ul>
+
+    <h3>Visualización realizada</h3>
+    <p>
+        Se aplicó un heatmap para visualizar la correlación entre variables del conjunto de datos de ausentismo. Se destacan relaciones esperadas y la ausencia
+        de relación fuerte entre variables y el tiempo de ausencia.
+    </p>
+
+    <h3>Objetivo y análisis</h3>
+    <p>
+        El objetivo era explorar posibles predictores del ausentismo laboral. A pesar de la falta de correlaciones fuertes con el target (ausentismo),
+        se identificaron relaciones útiles entre variables, como edad y tiempo de servicio, o peso e IMC. Esto sugiere que el fenómeno requiere análisis multicausal.
+    </p>
+
+    <img src="matriz_correlacion.png" alt="Matriz de Correlación">
+</div>
+
+<div class="container">
+    <h1>ACT3 PEC2 – Gráfico OHLC</h1>
+
+    <h3>Definición y funcionamiento del gráfico</h3>
+    <p>
+        El gráfico OHLC (Open-High-Low-Close) se utiliza en análisis técnico para representar cómo se comporta el precio de un activo en un periodo (habitualmente un día).
+        Cada unidad muestra cuatro valores: apertura, máximo, mínimo y cierre. Se puede representar como velas japonesas o líneas independientes.
+    </p>
+    <p>
+        Es ampliamente usado en bolsas de valores y plataformas financieras. Proporciona información crítica para la toma de decisiones de inversión.
+    </p>
+
+    <h3>Análisis del dataset</h3>
+    <ul>
+        <li>Fuente: <a href="https://www.investing.com/indices/spain-35-historical-data" target="_blank">Investing.com</a></li>
+        <li>Tipo: Serie temporal de datos bursátiles.</li>
+        <li>Variables: Fecha, Open, High, Low, Close.</li>
+        <li>Periodicidad: Diaria.</li>
+        <li>Limitaciones: No incluye datos cualitativos (noticias, eventos económicos) ni volumen de transacciones.</li>
+    </ul>
+
+    <h3>Visualización realizada</h3>
+    <p>
+        Dado que no se pudo generar un gráfico de velas tradicional en el entorno, se utilizó una versión por líneas que representa cada valor (OHLC)
+        de forma independiente a lo largo del tiempo para el índice IBEX 35.
+    </p>
+
+    <h3>Objetivo y análisis</h3>
+    <p>
+        El gráfico permite observar la evolución de precios, así como la volatilidad del mercado. Es útil para identificar días de alta variabilidad, 
+        tendencias a corto plazo y posibles señales de cambio en el comportamiento del índice.
+    </p>
+
+    <img src="ACT3_PEC2_OHLC_Lines.png" alt="Gráfico OHLC de IBEX 35">
+</div>
+
+</body>
+</html>
