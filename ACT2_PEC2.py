@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Cargar el dataset
-df = pd.read_csv("Dataset 2.csv", sep=';')
+df = pd.read_csv("Dataset2.csv", sep=';')
 
 # Seleccionar solo columnas numéricas
 df_numeric = df.select_dtypes(include=["number"])
