@@ -62,12 +62,12 @@
             <li>Las exportaciones a China son muy bajas en comparación al resto de variables y parece reaccionar de forma diferente a las tendencias generales.</li>
             
         </ul>
-<h3>Análisis del tipo de gráfica</h3>
+<h3>Comentario de gráfica</h3>
 <ul>
     <li><strong>Definición:</strong> Gráfico de área, útil para representar datos acumulativos y comparar categorías a lo largo del tiempo.</li>
     <li><strong>Datos:</strong> Cuantitativos, series temporales. Requiere datos ordenados por fecha. Idealmente con pocas categorías para no saturar.</li>
     <li><strong>Visualización:</strong> Exportaciones e importaciones de España con China y EE.UU.</li>
-    <li><strong>Comentario:</strong> Muestra claramente el crecimiento del comercio exterior y permite comparar su evolución. El degradado ayuda a asociar visualmente exportaciones e importaciones por país.</li>
+    <li><strong>Conclusión:</strong> Muestra claramente el crecimiento del comercio exterior y permite comparar su evolución. El gráfico de área ayuda a asociar visualmente exportaciones e importaciones por país.</li>
 </ul>
 
     <img src="exportaciones_importaciones_area.png" alt="Gráfico de área de exportaciones e importaciones">
@@ -78,7 +78,7 @@
     <h3>Definición y funcionamiento del gráfico</h3>
     <p>
         La matriz de correlación es una técnica estadística y visual que permite identificar la relación lineal entre pares de variables numéricas.
-        El valor de correlación oscila entre -1 (correlación negativa perfecta) y +1 (positiva perfecta), siendo 0 ausencia de relación lineal.
+        El valor de correlación oscila entre -1 (correlación negativa perfecta) y +1 (positiva perfecta), siendo 0 ausencia total de relación lineal.
     </p>
     <p>
         Esta técnica se representa comúnmente mediante un <em>heatmap</em> o mapa de calor, en el que los colores (rojos y azules) ayudan a visualizar
@@ -92,41 +92,29 @@
         <li>Observaciones: 740 registros correspondientes a empleados administrativos de una empresa.</li>
         <li>Variables: 21 variables entre continuas y categóricas codificadas (edad, peso, IMC, hijos, educación, etc.).</li>
         <li>Estructura: Cada fila representa un empleado y un episodio de ausencia. El tiempo de ausencia es la variable objetivo.</li>
-        <li>Limitaciones: No incluye variables emocionales, psicológicas o de contexto laboral subjetivo. La variable "Reason for absence" fue codificada numéricamente.</li>
+        <li>Limitaciones: No incluye variables emocionales, psicológicas o de contexto laboral subjetivo. La variable Reason for absence fue codificada numéricamente.</li>
     </ul>
-    <p>
-        El dataset ha sido transformado para incluir solo variables numéricas y permitir la aplicación directa de la matriz de correlación.
-        Se eliminaron campos no cuantitativos o se recodificaron para este propósito.
-    </p>
 
     <h3>Objetivo</h3>
     <p>
         El objetivo de esta visualización es detectar relaciones entre las variables personales, familiares y laborales que puedan estar vinculadas al ausentismo.
-        Se identificaron correlaciones fuertes esperadas, como:
-    </p>
-    <ul>
-        <li>IMC con peso: correlación positiva alta.</li>
-        <li>Edad con tiempo de servicio: correlación moderada positiva.</li>
-        <li>No se observan correlaciones fuertes entre el número de horas de ausentismo y otras variables cuantitativas.</li>
-    </ul>
-    <p>
-        Estos resultados sugieren que el ausentismo laboral puede depender más de factores cualitativos (estrés, clima laboral, motivación) que de los atributos medidos en el dataset.
-        La matriz cumple así su función exploratoria: detectar o descartar vínculos entre variables para orientar futuros análisis.
+        Se identificaron correlaciones fuertes esperadas que ayudan a ver que el dataset tiene cierta calidad, como: IMC con peso: correlación positiva alta y la edad con lo que se tarda al trabajo(Service time): correlación moderada positiva.
     </p>
 
     <h3>Hallazgos principales</h3>
     <ul>
         <li>Correlaciones fuertes entre variables físicas: IMC y peso, edad y antigüedad.</li>
-        <li>Ausencia de correlación directa entre variables personales y el ausentismo.</li>
-        <li>La técnica permite identificar variables redundantes o que podrían influir en modelos predictivos.</li>
+        <li>Ausencia de correlación directa entre variables personales (disciplina, educación, etc..) y el ausentismo.</li>
+       <li> El ausentismo laboral puede depender más de factores cualitativos (estrés, clima laboral, motivación) que de los atributos medidos en el dataset.</li>
+        <li>El dataset permite encontrar correlaciones y patrones más profundos y posteriormente predecir conductas con machine learning.</li>
     </ul>
 
-    <h3>Análisis del tipo de gráfica</h3>
+    <h3>Comentario de gráfica</h3>
     <ul>
         <li><strong>Definición:</strong> Matriz de correlación que muestra relaciones lineales entre variables numéricas, representadas en mapa de calor.</li>
-        <li><strong>Datos:</strong> Cuantitativos continuos. Se requiere más de 5 variables numéricas y suficientes observaciones (ideal: >30).</li>
-        <li><strong>Visualización:</strong> Relaciones entre variables personales y laborales de empleados administrativos.</li>
-        <li><strong>Comentario:</strong> Herramienta útil para detectar relaciones esperadas y descartar predictores irrelevantes del ausentismo.</li>
+        <li><strong>Datos:</strong> Cuantitativos continuos. Se requiere más bastantes variables numéricas y suficientes observaciones.</li>
+        <li><strong>Visualización:</strong> Vemos las relaciones entre variables personales y laborales de empleados y sus motivos de baja</li>
+        <li><strong>Conclusión:</strong> Herramienta útil para detectar relaciones esperadas y descartar predictores irrelevantes del ausentismo.</li>
     </ul>
 
     <img src="matriz_correlacion.png" alt="Matriz de Correlación">
@@ -137,9 +125,9 @@
 
     <h3>Definición y funcionamiento del gráfico</h3>
     <p>
-                 Un gráfico <strong>OHLC</strong> (Open-High-Low-Close) muestra la evolución de un valor financiero a lo largo del tiempo, incluyendo
+                 Un gráfico OHLC (Open-High-Low-Close) muestra la evolución de un valor financiero a lo largo del tiempo, incluyendo
             el precio de apertura, el máximo, el mínimo y el precio de cierre de cada jornada. Este tipo de gráfico se utiliza comúnmente en análisis técnico
-            para estudiar patrones de comportamiento en mercados bursátiles.
+            para estudiar patrones de comportamiento en mercados bursátiles o similares.
     </p>
     <p>
         Es ampliamente usado en bolsas de valores y plataformas financieras. Proporciona información crítica para la toma de decisiones de inversión.
@@ -148,32 +136,31 @@
     <h3>Análisis del dataset</h3>
     <ul>
         <li>Fuente: <a href="https://www.investing.com/indices/spain-35-historical-data" target="_blank">Investing.com</a></li>
-        <li>Tipo: Serie temporal de datos bursátiles.</li>
+        <li>Tipo: Serie temporal de datos bursátiles (o similares como criptomonedas o forex)</li>
         <li>Variables: Fecha, Open, High, Low, Close.</li>
-        <li>Periodicidad: Diaria.</li>
+        <li>Periodicidad: Generalmente diaria aunque se puede ver hasta de minutos</li>
         <li>Limitaciones: No incluye datos cualitativos (noticias, eventos económicos) ni volumen de transacciones.</li>
     </ul>
 
     <h3>Objetivo </h3>
     <p>
-        Dado que no se pudo generar un gráfico de velas tradicional en el entorno, se utilizó una versión por líneas que representa cada valor (OHLC)
-        de forma independiente a lo largo del tiempo para el índice IBEX 35.
-
-        El gráfico permite observar la evolución de precios, así como la volatilidad del mercado. Es útil para identificar días de alta variabilidad, 
-        tendencias a corto plazo y posibles señales de cambio en el comportamiento del índice.
+        Identificar la volatilidad diaria, mediante la diferencia entre el precio máximo y mínimo. Días con velas largas indican una mayor incertidumbre o reacción del mercado a eventos externos.
+        También para detectar tendencias a corto y medio plazo, como fases de crecimiento sostenido, correcciones o consolidaciones. 
     </p>
         <h3>Hallazgos principales</h3>
         <ul>
+            <li>En el gráfico se aprecia una fase de crecimiento notable entre noviembre de 2024 y febrero de 2025</li>
+            <li>Han habido dos caidas princiaples, una en los últimos días y otra entre julio y agosto de 2024.</li>
             <li>El precio de apertura y cierre suelen seguir tendencias similares, pero se observan diferencias marcadas en jornadas volátiles.</li>
-            <li>El rango entre el máximo y el mínimo refleja momentos de fuerte incertidumbre o actividad.</li>
-            <li>El índice ha mostrado oscilaciones pronunciadas durante las fechas más recientes.</li>
+            <li>La tendecia general es al alza aunque el índice ha mostrado oscilaciones pronunciadas durante los últimos meses.</li>
+            
         </ul>
-<h3>Análisis del tipo de gráfica</h3>
+<h3>Comentario de gráfica</h3>
 <ul>
-    <li><strong>Definición:</strong> Gráfico OHLC (Open-High-Low-Close). Usado en análisis financiero para representar variabilidad diaria de precios.</li>
+    <li><strong>Definición:</strong> Gráfico OHLC (Open-High-Low-Close). Es usado en análisis financiero para representar variabilidad diaria de precios.</li>
     <li><strong>Datos:</strong> Cuantitativos. Requiere columnas de fecha, apertura, máximo, mínimo y cierre. Aplicable a mercados financieros.</li>
     <li><strong>Visualización:</strong> Evolución diaria del IBEX 35.</li>
-    <li><strong>Comentario:</strong> Permite observar volatilidad, tendencias y comportamiento del índice en cada jornada bursátil. Ideal para análisis técnico.</li>
+    <li><strong>Conclusión:</strong> Permite observar volatilidad, tendencias y comportamiento del índice en cada jornada bursátil. Ideal para análisis técnico.</li>
 </ul>
     
     
