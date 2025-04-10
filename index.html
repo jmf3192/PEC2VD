@@ -17,104 +17,65 @@
 
 <div class="container">
 <div class="container">
-    <h1>ACT2 PEC2 – Matriz de Correlación</h1>
+   <h1>ACT1 PEC2 – Gráfico de Área</h1>
 
     <h3>Definición y funcionamiento del gráfico</h3>
     <p>
-        La matriz de correlación es una técnica estadística y visual que permite identificar la relación lineal entre pares de variables numéricas.
-        El valor de correlación oscila entre -1 (correlación negativa perfecta) y +1 (positiva perfecta), siendo 0 ausencia de relación lineal.
+        El gráfico de área es una técnica de visualización estadística basada en el gráfico de líneas. Se utiliza para representar la evolución de datos cuantitativos a lo largo del tiempo. 
+        La diferencia principal radica en que el área entre la línea y el eje horizontal se rellena con color, lo cual ayuda a destacar el volumen y la relación entre distintas series.
     </p>
     <p>
-        Esta técnica se representa comúnmente mediante un <em>heatmap</em> o mapa de calor, en el que los colores (rojos y azules) ayudan a visualizar
-        la fuerza e intensidad de las correlaciones. Es ampliamente utilizada en análisis exploratorio de datos, ciencias sociales, economía y ciencia de datos.
-    </p>
+           Esta representación visual que combina elementos de los gráficos de líneas y de barras, rellenando el área bajo una curva. Es especialmente útil para mostrar cambios acumulativos a lo largo del tiempo
+            y para comparar varios grupos o categorías. Al utilizar colores degradados, se pueden asociar fácilmente pares de variables relacionadas,
+            como exportaciones e importaciones del mismo país.
+        </p>
 
     <h3>Análisis del dataset</h3>
     <ul>
-        <li>Fuente: <a href="https://archive.ics.uci.edu/dataset/445/absenteeism+at+work" target="_blank">UCI Machine Learning Repository</a></li>
-        <li>Tipo: Cuantitativo, multivariable.</li>
-        <li>Observaciones: 740 registros correspondientes a empleados administrativos de una empresa.</li>
-        <li>Variables: 21 variables entre continuas y categóricas codificadas (edad, peso, IMC, hijos, educación, etc.).</li>
-        <li>Estructura: Cada fila representa un empleado y un episodio de ausencia. El tiempo de ausencia es la variable objetivo.</li>
-        <li>Limitaciones: No incluye variables emocionales, psicológicas o de contexto laboral subjetivo. La variable "Reason for absence" fue codificada numéricamente.</li>
+        <li>Fuente: <a href="https://www.epdata.es/datos/balanza-comercial-espana-importaciones-exportaciones-datos-estadisticas/308#eeuu" target="_blank">Epdata</a></li>
+        <li>Tipo: Series temporales cuantitativas.</li>
+        <li>Variables: Año, país (China/EE.UU.), exportaciones, importaciones.</li>
+        <li>Estructura: Dataset limpio con datos por país y año (formato largo).</li>
+        <li>Limitaciones: La comparación entre múltiples países es efectiva visualmente hasta cierto límite (demasiadas series saturan la gráfica).</li>
     </ul>
     <p>
-        El dataset ha sido transformado para incluir solo variables numéricas y permitir la aplicación directa de la matriz de correlación.
-        Se eliminaron campos no cuantitativos o se recodificaron para este propósito.
+         El gráfico generado compara las exportaciones e importaciones de España con China y Estados Unidos a lo largo del tiempo.
+        Se han utilizado colores degradados por país para diferenciar claramente entre ambos tipos de relaciones comerciales.
     </p>
-
-    <h3>Visualización realizada</h3>
-    <p>
-        Se generó una matriz de correlación sobre las variables numéricas del dataset. El gráfico incluye etiquetas numéricas y una barra de color 
-        que indica la fuerza y el signo de cada relación.
-    </p>
-
+    
     <h3>Objetivo y análisis</h3>
     <p>
-        El objetivo de esta visualización es detectar relaciones entre las variables personales, familiares y laborales que puedan estar vinculadas al ausentismo.
-        Se identificaron correlaciones fuertes esperadas, como:
+        Se representó la evolución de las exportaciones e importaciones de España con China y Estados Unidos desde 1995 hasta 2023.
+        Se utilizaron colores degradados emparejados para reflejar la vinculación entre exportación e importación de cada país.
     </p>
-    <ul>
-        <li>IMC con peso: correlación positiva alta.</li>
-        <li>Edad con tiempo de servicio: correlación moderada positiva.</li>
-        <li>No se observan correlaciones fuertes entre el número de horas de ausentismo y otras variables cuantitativas.</li>
-    </ul>
     <p>
-        Estos resultados sugieren que el ausentismo laboral puede depender más de factores cualitativos (estrés, clima laboral, motivación) que de los atributos medidos en el dataset.
-        La matriz cumple así su función exploratoria: detectar o descartar vínculos entre variables para orientar futuros análisis.
+        Esta visualización permite comparar cómo ha evolucionado el comercio exterior bilateral a lo largo del tiempo. El uso del área y color 
+        facilita la percepción del crecimiento, estancamiento o cambios abruptos. Destaca el crecimiento progresivo con China y la irregularidad con EE.UU.
+        Esta técnica es útil para comunicar tanto magnitudes absolutas como tendencias comparadas.
     </p>
+    
+        <h3>Hallazgos principales</h3>
+        <ul>
+            <li>Las exportaciones e importaciones con China muestran un crecimiento constante, especialmente a partir de 2005.</li>
+            <li>Estados Unidos presenta un volumen de comercio más alto que China en años recientes, con altibajos entre exportaciones e importaciones.</li>
+            <li>El uso de degradado facilita la asociación visual entre exportaciones e importaciones del mismo país.</li>
+        </ul>
+<h3>Análisis Sintetizado</h3>
+<ul>
+    <li><strong>Definición:</strong> Gráfico de área, útil para representar datos acumulativos y comparar categorías a lo largo del tiempo.</li>
+    <li><strong>Datos:</strong> Cuantitativos, series temporales. Requiere datos ordenados por fecha. Idealmente con pocas categorías para no saturar.</li>
+    <li><strong>Visualización:</strong> Exportaciones e importaciones de España con China y EE.UU.</li>
+    <li><strong>Comentario:</strong> Muestra claramente el crecimiento del comercio exterior y permite comparar su evolución. El degradado ayuda a asociar visualmente exportaciones e importaciones por país.</li>
+</ul>
 
-    <h3>Hallazgos principales</h3>
-    <ul>
-        <li>Correlaciones fuertes entre variables físicas: IMC y peso, edad y antigüedad.</li>
-        <li>Ausencia de correlación directa entre variables personales y el ausentismo.</li>
-        <li>La técnica permite identificar variables redundantes o que podrían influir en modelos predictivos.</li>
-    </ul>
-
-    <h3>Análisis Sintetizado</h3>
-    <ul>
-        <li><strong>Definición:</strong> Matriz de correlación que muestra relaciones lineales entre variables numéricas, representadas en mapa de calor.</li>
-        <li><strong>Datos:</strong> Cuantitativos continuos. Se requiere más de 5 variables numéricas y suficientes observaciones (ideal: >30).</li>
-        <li><strong>Visualización:</strong> Relaciones entre variables personales y laborales de empleados administrativos.</li>
-        <li><strong>Comentario:</strong> Herramienta útil para detectar relaciones esperadas y descartar predictores irrelevantes del ausentismo.</li>
-    </ul>
-
-    <img src="matriz_correlacion.png" alt="Matriz de Correlación">
+    <img src="exportaciones_importaciones_area.png" alt="Gráfico de área de exportaciones e importaciones">
 </div>
 
 
-<div class="container">
-    <h1>ACT2 PEC2 – Matriz de Correlación</h1>
-
-    <h3>Definición y funcionamiento del gráfico</h3>
-    <p>
-        Una matriz de correlación es una representación cuadrada que muestra la relación lineal entre pares de variables numéricas.
-        Se acompaña frecuentemente de un mapa de calor (<em>heatmap</em>) para una interpretación visual rápida. Los valores van de -1 (correlación negativa perfecta)
-        a +1 (positiva perfecta), siendo 0 la ausencia de correlación. Esta técnica se usa ampliamente en análisis exploratorio de datos (EDA), estadística y machine learning como paso previo a la selección de variables o detección de colinealidades.
-    </p>
-
-    <h3>Análisis del dataset</h3>
-    <ul>
-        <li>Fuente: <a href="https://archive.ics.uci.edu/dataset/445/absenteeism+at+work" target="_blank">UCI Machine Learning Repository</a></li>
-        <li>Tipo: Cuantitativo, multivariable.</li>
-        <li>Variables: Edad, peso, distancia al trabajo, IMC, número de hijos, carga laboral, etc.</li>
-        <li>Observaciones: 740 registros de empleados.</li>
-        <li>Limitaciones: No se incluyen variables emocionales o cualitativas que podrían incidir en el ausentismo.</li>
-    </ul>
-
- <h3>Objetivo y análisis</h3>
-    <p>
-        Se aplicó un heatmap para visualizar la correlación entre variables del conjunto de datos de ausentismo. Se destacan relaciones esperadas y la ausencia
-        de relación fuerte entre variables y el tiempo de ausencia.
-   
-        El objetivo era explorar posibles predictores del ausentismo laboral. A pesar de la falta de correlaciones fuertes con el target (ausentismo),
-        se identificaron relaciones útiles entre variables, como edad y tiempo de servicio, o peso e IMC. Esto sugiere que el fenómeno requiere análisis multicausal.
-     </p>
-
-    <img src="matriz_correlacion.png" alt="Matriz de Correlación">
 </div>
 
-<div class="container">
+
+<div>
     <h1>ACT3 PEC2 – Gráfico OHLC</h1>
 
     <h3>Definición y funcionamiento del gráfico</h3>
@@ -159,7 +120,7 @@
 </ul>
     
     
-    <img src="ACT3_PEC2_OHLC_Lines.png" alt="Gráfico OHLC de IBEX 35">
+    <img src="OHLC.png" alt="Gráfico OHLC de IBEX 35">
 </div>
 
 </body>
