@@ -70,7 +70,74 @@
 
     <img src="exportaciones_importaciones_area.png" alt="Gráfico de área de exportaciones e importaciones">
 </div>
+<div>
+<div class="container">
+    <h1>ACT2 PEC2 – Matriz de Correlación</h1>
 
+    <h3>Definición y funcionamiento del gráfico</h3>
+    <p>
+        La matriz de correlación es una técnica estadística y visual que permite identificar la relación lineal entre pares de variables numéricas.
+        El valor de correlación oscila entre -1 (correlación negativa perfecta) y +1 (positiva perfecta), siendo 0 ausencia de relación lineal.
+    </p>
+    <p>
+        Esta técnica se representa comúnmente mediante un <em>heatmap</em> o mapa de calor, en el que los colores (rojos y azules) ayudan a visualizar
+        la fuerza e intensidad de las correlaciones. Es ampliamente utilizada en análisis exploratorio de datos, ciencias sociales, economía y ciencia de datos.
+    </p>
+
+    <h3>Análisis del dataset</h3>
+    <ul>
+        <li>Fuente: <a href="https://archive.ics.uci.edu/dataset/445/absenteeism+at+work" target="_blank">UCI Machine Learning Repository</a></li>
+        <li>Tipo: Cuantitativo, multivariable.</li>
+        <li>Observaciones: 740 registros correspondientes a empleados administrativos de una empresa.</li>
+        <li>Variables: 21 variables entre continuas y categóricas codificadas (edad, peso, IMC, hijos, educación, etc.).</li>
+        <li>Estructura: Cada fila representa un empleado y un episodio de ausencia. El tiempo de ausencia es la variable objetivo.</li>
+        <li>Limitaciones: No incluye variables emocionales, psicológicas o de contexto laboral subjetivo. La variable "Reason for absence" fue codificada numéricamente.</li>
+    </ul>
+    <p>
+        El dataset ha sido transformado para incluir solo variables numéricas y permitir la aplicación directa de la matriz de correlación.
+        Se eliminaron campos no cuantitativos o se recodificaron para este propósito.
+    </p>
+
+    <h3>Visualización realizada</h3>
+    <p>
+        Se generó una matriz de correlación sobre las variables numéricas del dataset. El gráfico incluye etiquetas numéricas y una barra de color 
+        que indica la fuerza y el signo de cada relación.
+    </p>
+
+    <h3>Objetivo y análisis</h3>
+    <p>
+        El objetivo de esta visualización es detectar relaciones entre las variables personales, familiares y laborales que puedan estar vinculadas al ausentismo.
+        Se identificaron correlaciones fuertes esperadas, como:
+    </p>
+    <ul>
+        <li>IMC con peso: correlación positiva alta.</li>
+        <li>Edad con tiempo de servicio: correlación moderada positiva.</li>
+        <li>No se observan correlaciones fuertes entre el número de horas de ausentismo y otras variables cuantitativas.</li>
+    </ul>
+    <p>
+        Estos resultados sugieren que el ausentismo laboral puede depender más de factores cualitativos (estrés, clima laboral, motivación) que de los atributos medidos en el dataset.
+        La matriz cumple así su función exploratoria: detectar o descartar vínculos entre variables para orientar futuros análisis.
+    </p>
+
+    <h3>Hallazgos principales</h3>
+    <ul>
+        <li>Correlaciones fuertes entre variables físicas: IMC y peso, edad y antigüedad.</li>
+        <li>Ausencia de correlación directa entre variables personales y el ausentismo.</li>
+        <li>La técnica permite identificar variables redundantes o que podrían influir en modelos predictivos.</li>
+    </ul>
+
+    <h3>Análisis Sintetizado</h3>
+    <ul>
+        <li><strong>Definición:</strong> Matriz de correlación que muestra relaciones lineales entre variables numéricas, representadas en mapa de calor.</li>
+        <li><strong>Datos:</strong> Cuantitativos continuos. Se requiere más de 5 variables numéricas y suficientes observaciones (ideal: >30).</li>
+        <li><strong>Visualización:</strong> Relaciones entre variables personales y laborales de empleados administrativos.</li>
+        <li><strong>Comentario:</strong> Herramienta útil para detectar relaciones esperadas y descartar predictores irrelevantes del ausentismo.</li>
+    </ul>
+
+    <img src="matriz_correlacion.png" alt="Matriz de Correlación">
+</div>
+
+</div>    
 <div>
     <h1>ACT3 PEC2 – Gráfico OHLC</h1>
 
