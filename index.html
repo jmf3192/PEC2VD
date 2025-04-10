@@ -16,42 +16,72 @@
 <body>
 
 <div class="container">
-    <h1>ACT1 PEC2 – Gráfico de Área</h1>
+<div class="container">
+    <h1>ACT2 PEC2 – Matriz de Correlación</h1>
 
     <h3>Definición y funcionamiento del gráfico</h3>
     <p>
-        El gráfico de área es una técnica de visualización estadística basada en el gráfico de líneas. Se utiliza para representar la evolución de datos cuantitativos a lo largo del tiempo. 
-        La diferencia principal radica en que el área entre la línea y el eje horizontal se rellena con color, lo cual ayuda a destacar el volumen y la relación entre distintas series.
+        La matriz de correlación es una técnica estadística y visual que permite identificar la relación lineal entre pares de variables numéricas.
+        El valor de correlación oscila entre -1 (correlación negativa perfecta) y +1 (positiva perfecta), siendo 0 ausencia de relación lineal.
     </p>
     <p>
-        Su origen se encuentra en los estudios económicos y demográficos del siglo XX. Es comúnmente aplicado en informes financieros, análisis de tendencias de mercado, evolución demográfica,
-        energía, clima, tráfico web y muchas otras disciplinas.
+        Esta técnica se representa comúnmente mediante un <em>heatmap</em> o mapa de calor, en el que los colores (rojos y azules) ayudan a visualizar
+        la fuerza e intensidad de las correlaciones. Es ampliamente utilizada en análisis exploratorio de datos, ciencias sociales, economía y ciencia de datos.
     </p>
 
     <h3>Análisis del dataset</h3>
     <ul>
-        <li>Fuente: <a href="https://www.epdata.es/datos/balanza-comercial-espana-importaciones-exportaciones-datos-estadisticas/308#eeuu" target="_blank">Epdata</a></li>
-        <li>Tipo: Series temporales cuantitativas.</li>
-        <li>Variables: Año, país (China/EE.UU.), exportaciones, importaciones.</li>
-        <li>Estructura: Dataset limpio con datos por país y año (formato largo).</li>
-        <li>Limitaciones: La comparación entre múltiples países es efectiva visualmente hasta cierto límite (demasiadas series saturan la gráfica).</li>
+        <li>Fuente: <a href="https://archive.ics.uci.edu/dataset/445/absenteeism+at+work" target="_blank">UCI Machine Learning Repository</a></li>
+        <li>Tipo: Cuantitativo, multivariable.</li>
+        <li>Observaciones: 740 registros correspondientes a empleados administrativos de una empresa.</li>
+        <li>Variables: 21 variables entre continuas y categóricas codificadas (edad, peso, IMC, hijos, educación, etc.).</li>
+        <li>Estructura: Cada fila representa un empleado y un episodio de ausencia. El tiempo de ausencia es la variable objetivo.</li>
+        <li>Limitaciones: No incluye variables emocionales, psicológicas o de contexto laboral subjetivo. La variable "Reason for absence" fue codificada numéricamente.</li>
     </ul>
+    <p>
+        El dataset ha sido transformado para incluir solo variables numéricas y permitir la aplicación directa de la matriz de correlación.
+        Se eliminaron campos no cuantitativos o se recodificaron para este propósito.
+    </p>
 
     <h3>Visualización realizada</h3>
     <p>
-        Se representó la evolución de las exportaciones e importaciones de España con China y Estados Unidos desde 1995 hasta 2023.
-        Se utilizaron colores degradados emparejados para reflejar la vinculación entre exportación e importación de cada país.
+        Se generó una matriz de correlación sobre las variables numéricas del dataset. El gráfico incluye etiquetas numéricas y una barra de color 
+        que indica la fuerza y el signo de cada relación.
     </p>
 
     <h3>Objetivo y análisis</h3>
     <p>
-        Esta visualización permite comparar cómo ha evolucionado el comercio exterior bilateral a lo largo del tiempo. El uso del área y color 
-        facilita la percepción del crecimiento, estancamiento o cambios abruptos. Destaca el crecimiento progresivo con China y la irregularidad con EE.UU.
-        Esta técnica es útil para comunicar tanto magnitudes absolutas como tendencias comparadas.
+        El objetivo de esta visualización es detectar relaciones entre las variables personales, familiares y laborales que puedan estar vinculadas al ausentismo.
+        Se identificaron correlaciones fuertes esperadas, como:
+    </p>
+    <ul>
+        <li>IMC con peso: correlación positiva alta.</li>
+        <li>Edad con tiempo de servicio: correlación moderada positiva.</li>
+        <li>No se observan correlaciones fuertes entre el número de horas de ausentismo y otras variables cuantitativas.</li>
+    </ul>
+    <p>
+        Estos resultados sugieren que el ausentismo laboral puede depender más de factores cualitativos (estrés, clima laboral, motivación) que de los atributos medidos en el dataset.
+        La matriz cumple así su función exploratoria: detectar o descartar vínculos entre variables para orientar futuros análisis.
     </p>
 
-    <img src="exportaciones_importaciones_area.png" alt="Gráfico de área de exportaciones e importaciones">
+    <h3>Hallazgos principales</h3>
+    <ul>
+        <li>Correlaciones fuertes entre variables físicas: IMC y peso, edad y antigüedad.</li>
+        <li>Ausencia de correlación directa entre variables personales y el ausentismo.</li>
+        <li>La técnica permite identificar variables redundantes o que podrían influir en modelos predictivos.</li>
+    </ul>
+
+    <h3>Análisis Sintetizado</h3>
+    <ul>
+        <li><strong>Definición:</strong> Matriz de correlación que muestra relaciones lineales entre variables numéricas, representadas en mapa de calor.</li>
+        <li><strong>Datos:</strong> Cuantitativos continuos. Se requiere más de 5 variables numéricas y suficientes observaciones (ideal: >30).</li>
+        <li><strong>Visualización:</strong> Relaciones entre variables personales y laborales de empleados administrativos.</li>
+        <li><strong>Comentario:</strong> Herramienta útil para detectar relaciones esperadas y descartar predictores irrelevantes del ausentismo.</li>
+    </ul>
+
+    <img src="matriz_correlacion.png" alt="Matriz de Correlación">
 </div>
+
 
 <div class="container">
     <h1>ACT2 PEC2 – Matriz de Correlación</h1>
@@ -60,10 +90,7 @@
     <p>
         Una matriz de correlación es una representación cuadrada que muestra la relación lineal entre pares de variables numéricas.
         Se acompaña frecuentemente de un mapa de calor (<em>heatmap</em>) para una interpretación visual rápida. Los valores van de -1 (correlación negativa perfecta)
-        a +1 (positiva perfecta), siendo 0 la ausencia de correlación. 
-    </p>
-    <p>
-        Esta técnica se usa ampliamente en análisis exploratorio de datos (EDA), estadística y machine learning como paso previo a la selección de variables o detección de colinealidades.
+        a +1 (positiva perfecta), siendo 0 la ausencia de correlación. Esta técnica se usa ampliamente en análisis exploratorio de datos (EDA), estadística y machine learning como paso previo a la selección de variables o detección de colinealidades.
     </p>
 
     <h3>Análisis del dataset</h3>
@@ -75,17 +102,14 @@
         <li>Limitaciones: No se incluyen variables emocionales o cualitativas que podrían incidir en el ausentismo.</li>
     </ul>
 
-    <h3>Visualización realizada</h3>
+ <h3>Objetivo y análisis</h3>
     <p>
         Se aplicó un heatmap para visualizar la correlación entre variables del conjunto de datos de ausentismo. Se destacan relaciones esperadas y la ausencia
         de relación fuerte entre variables y el tiempo de ausencia.
-    </p>
-
-    <h3>Objetivo y análisis</h3>
-    <p>
+   
         El objetivo era explorar posibles predictores del ausentismo laboral. A pesar de la falta de correlaciones fuertes con el target (ausentismo),
         se identificaron relaciones útiles entre variables, como edad y tiempo de servicio, o peso e IMC. Esto sugiere que el fenómeno requiere análisis multicausal.
-    </p>
+     </p>
 
     <img src="matriz_correlacion.png" alt="Matriz de Correlación">
 </div>
@@ -95,8 +119,9 @@
 
     <h3>Definición y funcionamiento del gráfico</h3>
     <p>
-        El gráfico OHLC (Open-High-Low-Close) se utiliza en análisis técnico para representar cómo se comporta el precio de un activo en un periodo (habitualmente un día).
-        Cada unidad muestra cuatro valores: apertura, máximo, mínimo y cierre. Se puede representar como velas japonesas o líneas independientes.
+                 Un gráfico <strong>OHLC</strong> (Open-High-Low-Close) muestra la evolución de un valor financiero a lo largo del tiempo, incluyendo
+            el precio de apertura, el máximo, el mínimo y el precio de cierre de cada jornada. Este tipo de gráfico se utiliza comúnmente en análisis técnico
+            para estudiar patrones de comportamiento en mercados bursátiles.
     </p>
     <p>
         Es ampliamente usado en bolsas de valores y plataformas financieras. Proporciona información crítica para la toma de decisiones de inversión.
@@ -111,18 +136,29 @@
         <li>Limitaciones: No incluye datos cualitativos (noticias, eventos económicos) ni volumen de transacciones.</li>
     </ul>
 
-    <h3>Visualización realizada</h3>
+    <h3>Objetivo y análisis</h3>
     <p>
         Dado que no se pudo generar un gráfico de velas tradicional en el entorno, se utilizó una versión por líneas que representa cada valor (OHLC)
         de forma independiente a lo largo del tiempo para el índice IBEX 35.
-    </p>
 
-    <h3>Objetivo y análisis</h3>
-    <p>
         El gráfico permite observar la evolución de precios, así como la volatilidad del mercado. Es útil para identificar días de alta variabilidad, 
         tendencias a corto plazo y posibles señales de cambio en el comportamiento del índice.
     </p>
-
+        <h3>Hallazgos principales</h3>
+        <ul>
+            <li>El precio de apertura y cierre suelen seguir tendencias similares, pero se observan diferencias marcadas en jornadas volátiles.</li>
+            <li>El rango entre el máximo y el mínimo refleja momentos de fuerte incertidumbre o actividad.</li>
+            <li>El índice ha mostrado oscilaciones pronunciadas durante las fechas más recientes.</li>
+        </ul>
+<h3>Análisis Sintetizado</h3>
+<ul>
+    <li><strong>Definición:</strong> Gráfico OHLC (Open-High-Low-Close). Usado en análisis financiero para representar variabilidad diaria de precios.</li>
+    <li><strong>Datos:</strong> Cuantitativos. Requiere columnas de fecha, apertura, máximo, mínimo y cierre. Aplicable a mercados financieros.</li>
+    <li><strong>Visualización:</strong> Evolución diaria del IBEX 35.</li>
+    <li><strong>Comentario:</strong> Permite observar volatilidad, tendencias y comportamiento del índice en cada jornada bursátil. Ideal para análisis técnico.</li>
+</ul>
+    
+    
     <img src="ACT3_PEC2_OHLC_Lines.png" alt="Gráfico OHLC de IBEX 35">
 </div>
 
